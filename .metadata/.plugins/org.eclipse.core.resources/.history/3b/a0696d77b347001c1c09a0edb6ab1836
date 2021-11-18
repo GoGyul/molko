@@ -1,0 +1,19 @@
+package com.sbs.untact.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class UsrArticleController {
+
+	@RequestMapping("usr/article/detail")
+	@ResponseBody
+	public String showList(int id) {
+		
+		Article article = new Article();
+		
+		return "123123123123";
+	}
+		
+}

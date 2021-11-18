@@ -1,0 +1,5 @@
+package com.sbs.untact.dto;
+
+public class Article {
+
+}

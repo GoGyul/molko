@@ -1,0 +1,14 @@
+package com.sbs.untact.dto;
+
+public class Article {
+
+	int id; 
+	String regDate; 
+	String title; 
+	String content;
+	
+	public Article(int id, String regDate, String title, String content) {
+		
+	}
+	
+}
