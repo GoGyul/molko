@@ -1,0 +1,10 @@
+package com.sbs.untact.dto;
+
+public class ResultData {
+
+	private String resultCode;
+	private String msg;
+	private  Map<String, Object> content;
+	
+	
+}

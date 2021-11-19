@@ -1,2 +1,13 @@
 server:
   port: 8020
+spring:
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+#    url: jdbc:mysql://127.0.0.1:3306/untact?useUnicode=true&characterEncoding=utf8
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/untact?useUnicode=true&characterEncoding=utf8
+    username: molko
+    password: rhruf11QA
+mybatis:
+  type-aliases-package: com.sbs.untact.dto       
+    

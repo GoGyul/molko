@@ -1,0 +1,19 @@
+package com.sbs.untact.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import com.sbs.untact.dto.Article;
+
+@Mapper
+public interface ArticleDao {
+
+	public Article getArticle(@Param(value = "id") int id);
+	public void addArticle(@Param(value = "title") String title,@Param(value = "content") String content);
+	public List<Article> getArticles(String searchKeywordType, String searchKeyword);
+	public void deleteArticle(int id);
+	public void modifyArticle(int id, String title, String content);
+
+}

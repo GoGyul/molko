@@ -1,27 +1,18 @@
 package com.sbs.untact.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Article {
 
 	private int id; 
 	private String regDate; 
+	private String updateDate;
 	private String title; 
 	private String content;
-	
-	public Article(int id, String regDate, String title, String content) {
-		this.id = id;
-		this.regDate = regDate;
-		this.title = title;
-		this.content = content;
-	}
 
-	@Override
-	public String toString() {
-		return "Article [id=" + id + ", regDate=" + regDate + ", title=" + title + ", content=" + content + "]";
-	}
-	
-	
-	
 }

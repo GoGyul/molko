@@ -1,0 +1,15 @@
+package com.sbs.untact.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.sbs.untact.dto.Article;
+
+@Component
+public class ArticleDao {
+
+	private int articlesLastId;
+	private List<Article> articles;
+	
+}

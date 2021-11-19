@@ -1,0 +1,103 @@
+package com.sbs.untact.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.sbs.untact.dto.Article;
+import com.sbs.untact.dto.ResultData;
+import com.sbs.untact.util.Util;
+
+@Service
+public class ArticleService {
+
+	private int articlesLastId;
+	private List<Article> articles;
+	
+	public ArticleService(){
+		
+		articlesLastId = 0;
+		articles = new ArrayList<Article>();
+		
+		articles.add(new Article(++articlesLastId, "2020-12-12","2020-12-12", "제목","내용"));
+		articles.add(new Article(++articlesLastId, "2020-12-12","2020-12-12", "제목","내용"));
+		articles.add(new Article(++articlesLastId, "2020-12-12","2020-12-12", "제목","내용"));
+		
+	}
+
+	
+	
+	public Article getArticle(int id) {
+		for( Article article : articles) {
+			if(article.getId() == id) {
+				return article;
+			}
+		}
+		return null;
+	}
+
+	
+	
+	public List<Article> getArticles(String searchKeyword, String serachKeywordType) {
+		
+		if(searchKeyword==null) {
+			return null;
+		}
+		
+		List<Article> filtered = new ArrayList<>();
+		
+		for( Article article : articles) {
+			boolean contains;
+			
+			if(serachKeywordType.equals("title")) {
+				contains = article.getTitle().contains(searchKeyword);
+			}
+			
+			if(article.getTitle().contains(searchKeyword)) {
+				filtered.add(article);				
+			}
+		}
+		
+		return filtered;
+	}
+
+	
+	
+	public ResultData add(String title, String content) {
+		int id = ++articlesLastId;
+		String regDate = Util.getNowDateStr();
+		String updateDate = regDate;
+		
+		articles.add(new Article(id, regDate,updateDate, title, content));
+		
+		return new ResultData("s-1","성공","id",articlesLastId);
+	}
+	
+	
+	
+	
+	public ResultData deleteArticle(int id) {
+		
+		for(Article article : articles) {
+			if(article.getId() == id) {
+				articles.remove(article);
+				return new ResultData("s-1","삭제하였씁니다.","id",id);
+			}
+		}
+		return new ResultData("f-1","삭제에 실패하였습니다..","id",id);
+	}
+
+	
+	
+	public ResultData modify(int id, String title, String content) {
+		
+		Article article = getArticle(id);
+		
+		article.setTitle(title);
+		article.setContent(content);
+		article.setUpdateDate(Util.getNowDateStr());
+		return new ResultData("s-1","수정에 성공하였습니다.","id",id);
+	}
+	
+}

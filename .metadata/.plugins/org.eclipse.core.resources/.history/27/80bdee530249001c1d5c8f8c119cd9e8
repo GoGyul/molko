@@ -1,0 +1,14 @@
+package com.sbs.untact.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.sbs.untact.dto.Article;
+
+@Mapper
+public interface ArticleDao {
+
+	Article getArticle(int id);
+
+	
+	
+}
