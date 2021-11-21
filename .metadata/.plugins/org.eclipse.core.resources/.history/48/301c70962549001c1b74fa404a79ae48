@@ -1,0 +1,22 @@
+package com.sbs.untact.service;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sbs.untact.dto.ResultData;
+
+@Service
+public class MemberService {
+
+	@Autowired
+	private MemberDao memberDao;
+	
+	public ResultData join(Map<String, Object> param) {
+		
+		memberDao.join(param);
+		return null;
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.sbs.untact.controller;
+
+
+@Controller
+public class UsrMemberController {
+
+	@RequestMapping("usr/member/doJoin")
+	@ResponseBody
+	public String doJoin(@RequestParam Map<>) {
+		
+		
+		
+	}
+	
+}

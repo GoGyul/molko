@@ -1,0 +1,9 @@
+package com.sbs.untact.dao;
+
+import java.util.Map;
+
+public interface MemberDao {
+
+	public void join(Map<String, Object> param);
+
+}

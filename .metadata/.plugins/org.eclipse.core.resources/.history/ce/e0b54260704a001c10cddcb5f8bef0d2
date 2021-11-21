@@ -1,0 +1,5 @@
+package com.sbs.untact.config;
+
+public class WebMvcConfig {
+
+}
